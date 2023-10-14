@@ -27,8 +27,8 @@ class BusController extends Controller
      */
     public function index(): View
     {
-        $bus = Bus::latest()->paginate(5);
-        return view('bus.index',compact('bus'))
+        $buses = Bus::latest()->paginate(5);
+        return view('bus.index',compact('buses'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -69,7 +69,7 @@ class BusController extends Controller
      */
     public function show(Bus $bus): View
     {
-        return view('bus.show',compact('bus'));
+        return view('bus.show',compact('buses'));
     }
     
     /**

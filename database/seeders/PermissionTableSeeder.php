@@ -25,7 +25,11 @@ class PermissionTableSeeder extends Seeder
            'bus-list',
            'bus-create',
            'bus-edit',
-           'bus-delete'
+           'bus-delete',
+           'location-list',
+           'location-create',
+           'location-edit',
+           'location-delete',
            
         ];
         

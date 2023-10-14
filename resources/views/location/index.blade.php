@@ -4,11 +4,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Bus List</h2>
+                <h2>Location List</h2>
             </div>
             <div class="pull-right">
-                @can('bus-create')
-                <a class="btn btn-success" href="{{ route('bus.create') }}"> Create New bus</a>
+                @can('location-create')
+                <a class="btn btn-success" href="{{ route('location.create') }}"> Create New location</a>
                 @endcan
             </div>
         </div>
@@ -24,24 +24,24 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
+            <th>Platforn Data</th>
             <th width="280px">Action</th>
         </tr>
-	    @foreach ($buses as $bus)
+	    @foreach ($locations as $location)
 	    <tr>
 	        <td>{{ ++$i }}</td>
-	        <td>{{ $bus->name }}</td>
-	        <td>{{ $bus->detail }}</td>
+	        <td>{{ $location->name }}</td>
+	        <td>{{ $location->platform_no }}</td>
 	        <td>
-                <form action="{{ route('bus.destroy',$bus->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('bus.show',$bus->id) }}">Show</a>
-                    @can('bus-edit')
-                    <a class="btn btn-primary" href="{{ route('bus.edit',$bus->id) }}">Edit</a>
+                <form action="{{ route('location.destroy',$location->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Show</a>
+                    @can('location-edit')
+                    <a class="btn btn-primary" href="{{ route('location.edit',$location->id) }}">Edit</a>
                     @endcan
 
                     @csrf
                     @method('DELETE')
-                    @can('bus-delete')
+                    @can('location-delete')
                     <button type="submit" class="btn btn-danger">Delete</button>
                     @endcan
                 </form>
@@ -50,6 +50,5 @@
 	    @endforeach
     </table>
 
-    {!! $buses->links() !!}
-
+    {!! $locations->links() !!}
 @endsection
