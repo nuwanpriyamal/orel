@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Bus;
+use App\models\Location;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
-class BusController extends Controller
+class NewBusController extends Controller
 {
-       /**
+      /**
      * Display a Bus listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -67,11 +67,10 @@ class BusController extends Controller
      * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function show(Bus $location): View
+    public function show(Bus $buses): View
     {
-        echo $location;
-        die;
-        return view('bus.show',compact('bus'));
+       
+        return view('bus.show',compact('buses'));
     }
     
     
@@ -81,9 +80,9 @@ class BusController extends Controller
      * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bus $bus): View
+    public function edit(Bus $buses): View
     {
-        return view('bus.edit',compact('bus'));
+        return view('bus.edit',compact('buses'));
     }
     
     /**
@@ -109,14 +108,12 @@ class BusController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Bus  $bus
+     * @param  \App\Bus  $buses
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bus $bus): RedirectResponse
+    public function destroy(Location $buses): RedirectResponse
     {
-        echo $bus;
-        die;
-        $bus->delete();
+        $buses->delete();
     
         return redirect()->route('bus.index')
                         ->with('success','Bus deleted successfully');

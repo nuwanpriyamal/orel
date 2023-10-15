@@ -1,12 +1,12 @@
 <?php    
 namespace App\Http\Controllers;
     
-use App\Models\Product;
+use App\Models\Bus;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
     
-class ProductController extends Controller
+class BusHandleController extends Controller
 { 
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class ProductController extends Controller
      */
     function __construct()
     {
-         $this->middleware('permission:product-list|product-create|product-edit|product-delete', ['only' => ['index','show']]);
-         $this->middleware('permission:product-create', ['only' => ['create','store']]);
-         $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+         $this->middleware('permission:bus-list|bus-create|bus-edit|bus-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:bus-create', ['only' => ['create','store']]);
+         $this->middleware('permission:bus-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:bus-delete', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.
@@ -27,8 +27,8 @@ class ProductController extends Controller
      */
     public function index(): View
     {
-        $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))
+        $buses = Bus::latest()->paginate(5);
+        return view('bus.index',compact('buses'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -39,7 +39,7 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view('products.create');
+        return view('bus.create');
     }
     
     /**
@@ -55,65 +55,65 @@ class ProductController extends Controller
             'detail' => 'required',
         ]);
     
-        Product::create($request->all());
+        Bus::create($request->all());
     
-        return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+        return redirect()->route('bus.index')
+                        ->with('success','bus created successfully.');
     }
     
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product): View
+    public function show(Bus $bu): View
     {
-        return view('products.show',compact('product'));
+        return view('bus.show',compact('bu'));
     }
     
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product): View
+    public function edit(Bus $bu): View
     {
-        return view('products.edit',compact('product'));
+        return view('bus.edit',compact('bu'));
     }
     
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product): RedirectResponse
+    public function update(Request $request, Bus $bu): RedirectResponse
     {
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
         ]);
     
-        $product->update($request->all());
+        $bu->update($request->all());
     
-        return redirect()->route('products.index')
-                        ->with('success','Product updated successfully');
+        return redirect()->route('bus.index')
+                        ->with('success','bus updated successfully');
     }
     
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Bus  $bus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product): RedirectResponse
+    public function destroy(Bus $bu): RedirectResponse
     {
-        $product->delete();
+        $bu->delete();
     
-        return redirect()->route('products.index')
-                        ->with('success','Product deleted successfully');
+        return redirect()->route('bus.index')
+                        ->with('success','Bus deleted successfully');
     }
 }
