@@ -29,14 +29,12 @@
         <div class="form-group">
             <strong>Assign Date:</strong>
             {!! Form::text('assign_date', null, array('placeholder' => 'Assign Date','class' => 'form-control')) !!}
+            {!! Form::hidden('assign_by', null, array('placeholder' => 'Assign_by','class' => 'form-control')) !!}
+  
+       
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Email:</strong>
-            {!! Form::text('assign_by', null, array('placeholder' => 'Assign_by','class' => 'form-control')) !!}
-        </div>
-    </div>
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Select Bus :</strong>
@@ -46,13 +44,13 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Start Location :</strong>
-            {!! Form::select('location_id_fromll',$location,$selectedfromlocation, array('class' => 'form-control')) !!}
+            {!! Form::select('location_id_from',$location,$selectedfromlocation, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>End Location :</strong>
-           {!! Form::select('location_id_endll[]',$location,$selectedtolocation, array('class' => 'form-control','multiple')) !!}
+           {!! Form::select('location_id_end',$location,$selectedtolocation, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -60,6 +58,4 @@
     </div>
 </div>
 {!! Form::close() !!}
-
-<p class="text-center text-primary"><small>Tutorial by LaravelTuts.com</small></p>
 @endsection

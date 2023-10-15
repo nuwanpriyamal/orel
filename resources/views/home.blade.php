@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }}</br>
+                    welcome to the Avengers Pvt Ltd.... </br>
+
+                    if you are new to the system login as admin and allow permission to this new account.</br>
+
+                    thank you
+
                 </div>
             </div>
         </div>

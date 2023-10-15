@@ -34,7 +34,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Assign Date:</strong>
-            {!! Form::text('assign_by', null, array('placeholder' => 'Assignby','class' => 'form-control')) !!}
+            {!! Form::hidden('assign_by',  Auth::user()->id, array('placeholder' => 'Assignby','class' => 'form-control')) !!}
             {!! Form::date('assign_date', null, array('placeholder' => 'Assign Date', 'class' => 'form-control')) !!}
         </div>
     </div>

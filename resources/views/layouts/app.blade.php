@@ -49,11 +49,21 @@
                                 </li>
                             @endif
                         @else
+                        @can('user-list')
                             <li><a class="nav-link" href="{{ route('users.index') }}">Users mgt</a></li>
+                          @endcan
+                          @can('role-list')
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Role mgt</a></li>
+                            @endcan
+                            @can('location-list')
                             <li><a class="nav-link" href="{{ route('location.index') }}">Routing Mgt</a></li>
+                            @endcan
+                            @can('bus-list')
                             <li><a class="nav-link" href="{{ route('bus.index') }}">Buses mgt</a></li>
+                            @endcan
+                            @can('assign-list')
                             <li><a class="nav-link" href="{{ route('assign.index') }}">Schedule</a></li>
+                            @endcan
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
