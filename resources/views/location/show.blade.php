@@ -16,13 +16,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $locations->name }}
+                {{ $location->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Platform no:</strong>
-                {{ $locations->platform_no }}
+                {{ $location->platform_no }}
             </div>
         </div>
     </div>

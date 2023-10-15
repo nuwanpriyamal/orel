@@ -62,16 +62,16 @@ class LocationController extends Controller
                      ->with('success','location added successfully.');
  }
  
- /**
-  * Display the specified resource.
-  *
-  * @param  \App\Location  $location
-  * @return \Illuminate\Http\Response
-  */
- public function show(Location $location): View
- {
-     return view('location.show',compact('location'));
- }
+   /**
+     * Display the specified resource.
+     *
+     * @param  \App\Location  $location
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Location $location): View
+    {
+        return view('location.show',compact('location'));
+    }
  
  /**
   * Show the form for editing the specified resource.
