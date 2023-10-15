@@ -26,6 +26,10 @@ class PermissionTableSeeder extends Seeder
            'location-create',
            'location-edit',
            'location-delete',
+           'assign-list',
+           'assign-create',
+           'assign-edit',
+           'assign-delete'
            
         ];
         

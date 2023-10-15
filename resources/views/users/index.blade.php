@@ -51,5 +51,4 @@
 
 {!! $data->render() !!}
 
-<p class="text-center text-primary"><small>Tutorial by LaravelTut.com</small></p>
 @endsection
