@@ -7,7 +7,7 @@
                 <h2>Add New Location</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
+                <a class="btn btn-primary mb-4" href="{{ route('location.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		            <button type="submit" class="btn btn-primary">Submit</button>
+		            <button type="submit" class="btn btn-primary mt-4">Submit</button>
 		    </div>
 		</div>
     </form>

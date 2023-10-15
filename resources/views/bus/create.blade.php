@@ -7,7 +7,7 @@
                 <h2>Add New Bus</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('bus.index') }}"> Back</a>
+                <a class="btn btn-primary mb-4" href="{{ route('bus.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -32,6 +32,18 @@
 		            <input type="text" name="name" class="form-control" placeholder="Name">
 		        </div>
 		    </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+		        <div class="form-group">
+		            <strong>Reg Number:</strong>
+                    <input type="text" name="reg_no" class="form-control" placeholder="Reg no">
+                </div>
+		    </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+		        <div class="form-group">
+		            <strong>Seat Capacity:</strong>
+                    <input type="number" name="seat_capacity" class="form-control" placeholder="Seat Capacity">
+		        </div>
+		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Detail:</strong>
@@ -39,7 +51,7 @@
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		            <button type="submit" class="btn btn-primary">Submit</button>
+		            <button type="submit" class="btn btn-primary mt-4">Submit</button>
 		    </div>
 		</div>
     </form>

@@ -8,7 +8,7 @@
         </div>
         <div class="pull-right">
         @can('assign-create')
-            <a class="btn btn-success" href="{{ route('assign.create') }}"> Schedule</a>
+            <a class="btn btn-success mb-4" href="{{ route('assign.create') }}"> Schedule</a>
             @endcan
         </div>
     </div>
@@ -46,8 +46,7 @@
      {{$data->assign_by}}
     </td>
     <td>
-       <a class="btn btn-info" href="{{ route('assign.show',$data->id) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('assign.edit',$data->id) }}">Edit</a>
+        <a class="btn btn-primary" href="{{ route('assign.edit',$data->id) }}">Edit</a>
         {!! Form::open(['method' => 'DELETE','route' => ['assign.destroy', $data->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}

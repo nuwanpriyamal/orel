@@ -7,7 +7,7 @@
                 <h2> Show Location</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
+                <a class="btn btn-primary mb-4" href="{{ route('location.index') }}"> Back</a>
             </div>
         </div>
     </div>

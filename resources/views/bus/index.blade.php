@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 @can('bus-create')
-                <a class="btn btn-success" href="{{ route('bus.create') }}"> Create New bus</a>
+                <a class="btn btn-success mb-4" href="{{ route('bus.create') }}">  New bus</a>
                 @endcan
             </div>
         </div>
@@ -24,6 +24,8 @@
         <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Reg No</th>
+            <th>Seat Capacity</th>
             <th>Details</th>
             <th width="280px">Action</th>
         </tr>
@@ -31,6 +33,8 @@
 	    <tr>
 	        <td>{{ ++$i }}</td>
 	        <td>{{ $bus->name }}</td>
+            <td>{{ $bus->reg_no }}</td>
+            <td>{{ $bus->seat_capacity }}</td>
 	        <td>{{ $bus->detail }}</td>
 	        <td>
                 <form action="{{ route('bus.destroy',$bus->id) }}" method="POST">

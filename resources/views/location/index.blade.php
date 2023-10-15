@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 @can('location-create')
-                <a class="btn btn-success" href="{{ route('location.create') }}"> Create New location</a>
+                <a class="btn btn-success mb-4" href="{{ route('location.create') }}"> New location</a>
                 @endcan
             </div>
         </div>

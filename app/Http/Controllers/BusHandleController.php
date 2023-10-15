@@ -52,6 +52,8 @@ class BusHandleController extends Controller
     {
         request()->validate([
             'name' => 'required',
+            'reg_no'=>'required',
+            'seat_capacity'=>'required',
             'detail' => 'required',
         ]);
     
@@ -94,6 +96,8 @@ class BusHandleController extends Controller
     {
          request()->validate([
             'name' => 'required',
+            'reg_no'=>'required',
+            'seat_capacity'=>'required',
             'detail' => 'required',
         ]);
     

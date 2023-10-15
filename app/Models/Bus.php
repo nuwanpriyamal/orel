@@ -14,6 +14,6 @@ class Bus extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'detail'
+        'name','reg_no','seat_capacity','detail'
     ];
 }
