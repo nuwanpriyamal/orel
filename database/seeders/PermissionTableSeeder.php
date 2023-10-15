@@ -29,7 +29,11 @@ class PermissionTableSeeder extends Seeder
            'assign-list',
            'assign-create',
            'assign-edit',
-           'assign-delete'
+           'assign-delete',
+           'user-list',
+           'user-create',
+           'user-edit',
+           'user-delete',
            
         ];
         
