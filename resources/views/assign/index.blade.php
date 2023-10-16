@@ -35,10 +35,10 @@
 
  @foreach ($assigns as $key => $data)
   <tr>
-    <td>{{ ++$i }}</td>
-    <td>{{ $data->bus_id }}</td>
-    <td>{{ $data->location_id_from }}</td>
-    <td>{{ $data->location_id_end }}</td>
+    <td>{{ $data->id }}</td>
+    <td>{{ $data->bus->name }}</td>
+    <td>{{ $data->locationStart->name }}</td>
+    <td>{{ $data->locationEnd->name }}</td>
     <td>
      {{$data->assign_date}}
     </td>

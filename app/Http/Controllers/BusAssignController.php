@@ -29,9 +29,10 @@ class BusAssignController extends Controller
      */
     public function index(): View
     {
-        $assigns = Assign::latest()->paginate(5);
-        return view('assign.index',compact('assigns'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $assigns = Assign::latest()->with('bus', 'locationStart', 'locationEnd')
+        ->paginate(10);
+
+        return view('assign.index', compact('assigns'));
     }
     
     /**
